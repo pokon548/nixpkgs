@@ -60,6 +60,10 @@ stdenv.mkDerivation rec {
     "-Dvapi=false"
   ];
 
+  fixupPhase = ''
+    ln -sf $out/share/icons/hicolor/scalable/apps/ca.andyholmes.Valent.svg $out/share/icons/hicolor/scalable/apps/${pname}.svg
+  '';
+
   meta = {
     description = "Implementation of the KDE Connect protocol, built on GNOME platform libraries";
     mainProgram = "valent";
